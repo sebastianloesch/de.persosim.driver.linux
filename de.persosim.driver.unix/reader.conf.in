@@ -1,0 +1,4 @@
+FRIENDLYNAME "PersoSimHandshake"
+DEVICENAME   localhost:5678
+LIBPATH      @LIBPATH@
+CHANNELID    0x8C7B

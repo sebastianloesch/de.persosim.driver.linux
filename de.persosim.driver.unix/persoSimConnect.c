@@ -56,7 +56,7 @@ int transmit (int sockfd, const char* msgBuffer) {
 	strcat(transmitBuffer, "\n");
 	Log2(PCSC_LOG_DEBUG, "Sending message to client: %s", transmitBuffer);
 
-	if (send(sockfd, transmitBuffer, bufferLength, MSG_NOSIGNAL) < 0) {
+	if (send(sockfd, transmitBuffer, bufferLength, 0) < 0) {
 			Log1(PCSC_LOG_ERROR, "Failure during transmit to client");
 			return PSIM_COMMUNICATION_ERROR;
 	}
@@ -194,10 +194,6 @@ void * handleHandshakeConnections(void * param) {
 
 		// enable connector as new reader
 		curReader->clientSocket = clientSocket;
-
-		//let pcsc rescan readers
-		raise(SIGUSR1);
-
 
 		//XXX implement closing and disposal of client sockets (through handshake as well as on errors)
 	}
