@@ -13,10 +13,10 @@ Benötigt werden zusätzlich zur Standardinstallation die folgenden Pakete
 Diese können per `sudo apt-get install pcscd pcsc-tools libpcsclite-dev` installiert werden.
 
 ### OS X 10.10
-TODO
+Benötigt wird das Paket XCode, welches über den Mac App Store installiert werden kann.
 
 ## Installation
-Das Treiberpaket liegt Moment lediglich im Quellcode vor und kann mit der weit verbreiteten Kommandokombination
+Das Treiberpaket liegt momentan lediglich im Quellcode vor und kann mit der weit verbreiteten Kommandokombination
 ```
 cmake .
 make
