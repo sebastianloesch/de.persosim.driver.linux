@@ -195,6 +195,11 @@ void * handleHandshakeConnections(void * param) {
 		// enable connector as new reader
 		curReader->clientSocket = clientSocket;
 
+#if !defined(__APPLE__)
+		//let pcsc rescan readers
+		raise(SIGUSR1);
+#endif
+
 		//XXX implement closing and disposal of client sockets (through handshake as well as on errors)
 	}
 
